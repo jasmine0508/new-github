@@ -10,4 +10,10 @@ public class DemoController {
     public String demo() {
         return "Hello world from Demo App";
     }
+    
+    @GetMapping("/demo1")
+    public String Demo1() {
+        String Ste = "One";
+        return "Hello world from Demo App";
+    }
 }
