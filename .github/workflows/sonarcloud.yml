@@ -63,3 +63,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -DskipTests=true -B verify  -Dsonar.projectKey=asimmanzoor_java-github-action-app
+      - run: mkdir -p path/to/artifact
+      - run: echo hello > path/to/artifact/world.txt
+      - uses: actions/upload-artifact@v4
+        with:
+         name: my-artifact
+         path: path/to/artifact/world.txt  
